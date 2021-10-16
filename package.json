@@ -1,54 +1,64 @@
 {
-    "name": "node-cli-template",
+    "name": "axios-io-ts",
     "version": "0.1.0",
     "description": "",
     "main": "./bin/index.js",
     "bin": {
-        "node-cli-template": "./bin/main.js"
+        "axios-io-ts": "./bin/main.js"
     },
     "files": [
         "bin"
     ],
     "scripts": {
         "build": "tsc",
-        "test": "mocha test/*.test.ts",
+        "lint": "eslint .",
+        "lint-fix": "eslint . --ext .{js,ts} --fix",
+        "package": "ncc build src/index.ts -o bin",
+        "prettier": "prettier --config .prettierrc.js --write ./**/*.{css,js,json,md,ts,yml}",
         "start": "nodemon --watch src/**/*.ts --exec ts-node src/index.ts",
-        "cover": "nyc --nycrc-path=.nycrc.js mocha test/**/*.test.ts",
-        "lint": "eslint --config .eslintrc.js src/**/*.{js,ts} --fix",
-        "prettier": "prettier --config .prettierrc.js --write ./**/*.{css,js,json,md,ts}"
+        "test": "NODE_ENV=test jest --runInBand --coverage"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/johnyherangi/node-cli-template.git"
+        "url": "git+https://github.com/johnyherangi/axios-io-ts.git"
     },
     "bugs": {
-        "url": "https://github.com/johnyherangi/node-cli-template/issues"
+        "url": "https://github.com/johnyherangi/axios-io-ts/issues"
     },
-    "homepage": "https://github.com/johnyherangi/node-cli-template#readme",
+    "homepage": "https://github.com/johnyherangi/axios-io-ts#readme",
     "keywords": [],
     "author": "Johny Herangi",
     "license": "ISC",
     "devDependencies": {
-        "@types/chai": "^4.2.11",
-        "@types/mocha": "^7.0.2",
+        "@types/jest": "^27.0.2",
         "@types/node": "^14.0.14",
-        "@types/sinon": "^9.0.4",
         "@typescript-eslint/eslint-plugin": "^3.5.0",
         "@typescript-eslint/parser": "^3.5.0",
-        "chai": "^4.2.0",
+        "@vercel/ncc": "^0.31.1",
         "eslint": "^7.3.1",
         "eslint-config-prettier": "^6.11.0",
-        "eslint-plugin-prettier": "^3.1.4",
+        "eslint-plugin-fp-ts": "^0.2.1",
+        "eslint-plugin-jest": "^25.2.1",
+        "eslint-plugin-prettier": "^3.4.1",
         "husky": "^4.2.5",
-        "mocha": "^8.0.1",
-        "nodemon": "^2.0.4",
-        "nyc": "^15.1.0",
+        "jest": "^26.6.3",
+        "jest-ts-auto-mock": "^2.0.0",
+        "nodemon": "^2.0.13",
         "prettier": "^2.0.5",
         "pretty-quick": "^2.0.1",
-        "sinon": "^9.0.2",
         "source-map-support": "^0.5.19",
-        "ts-node": "^8.10.2",
-        "typescript": "^3.9.5"
+        "ts-auto-mock": "^3.3.5",
+        "ts-jest": "^26.5.5",
+        "ts-loader": "^8.0.15",
+        "ts-node": "^9.1.1",
+        "tsconfig-paths": "^3.11.0",
+        "ttypescript": "^1.5.12",
+        "typescript": "^4.4.3",
+        "json-schema-to-ts": "^1.5.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "axios": "^0.23.0",
+        "io-ts": "^2.2.16",
+        "io-ts-reporters": "^2.0.0"
+    }
 }

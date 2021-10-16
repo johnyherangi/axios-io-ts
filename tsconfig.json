@@ -1,15 +1,19 @@
 {
+    "extends": "./tsconfig.paths.json",
+    "include": ["src", "__tests__", "jest.config.ts"],
     "compilerOptions": {
-        "target": "es2018",
+        "target": "esnext",
         "module": "commonjs",
-        "outDir": "./bin",
+        "experimentalDecorators": true,
         "strict": true,
         "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "sourceMap": true,
-        "experimentalDecorators": true,
-        "declaration": true,
-        "declarationMap": true
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "resolveJsonModule": true,
+        "noEmit": true
     },
-    "include": ["src"]
+    "ts-node": {
+        "require": ["tsconfig-paths/register"]
+    }
 }

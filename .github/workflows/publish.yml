@@ -14,7 +14,7 @@ jobs:
                   node-version: 12
                   registry-url: "https://registry.npmjs.org"
             - run: npm ci
-            - run: npm run build
+            - run: npm run package
             - run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -29,7 +29,7 @@ jobs:
                   scope: "@johnyherangi"
             - run: npm ci
             - run: echo "registry=https://npm.pkg.github.com/@johnyherangi" >> .npmrc
-            - run: npm run build
+            - run: npm run package
             - run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
