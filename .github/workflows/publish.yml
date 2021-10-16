@@ -1,0 +1,35 @@
+name: publish
+
+on:
+    release:
+        types: [published]
+
+jobs:
+    publish-npm:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+                  registry-url: "https://registry.npmjs.org"
+            - run: npm ci
+            - run: npm run build
+            - run: npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    publish-gpr:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+                  registry-url: https://npm.pkg.github.com
+                  scope: "@johnyherangi"
+            - run: npm ci
+            - run: echo "registry=https://npm.pkg.github.com/@johnyherangi" >> .npmrc
+            - run: npm run build
+            - run: npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es2018",
+        "module": "commonjs",
+        "outDir": "./bin",
+        "strict": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "declaration": true,
+        "declarationMap": true
+    },
+    "include": ["src"]
+}
