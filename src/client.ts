@@ -1,52 +1,38 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios"
-import { decode } from "./decode"
+import { AxiosRequestConfig } from "axios"
+import { httpDelete, httpGet, httpOptions, httpPatch, httpPost, httpPut } from "./request"
 import { Client, RequestConfig } from "./types"
 
 export const createClient = (config: AxiosRequestConfig): Client => {
-    const axiosRequest = async <A>(request: RequestConfig<A>): Promise<AxiosResponse<A>> => {
-        return await axios
-            .request({
-                ...config,
-                ...request,
-            })
-            .then((response) => {
-                if (request.decoder) {
-                    decode(response.data, request.url, request.decoder)
-                }
-                return response as AxiosResponse<A>
-            })
-    }
-
     return {
         delete: async <A>(request: RequestConfig<A>) =>
-            axiosRequest({
+            httpDelete({
+                ...config,
                 ...request,
-                method: "DELETE",
             }),
         get: async <A>(request: RequestConfig<A>) =>
-            axiosRequest({
+            httpGet({
+                ...config,
                 ...request,
-                method: "GET",
             }),
         options: async <A>(request: RequestConfig<A>) =>
-            axiosRequest({
+            httpOptions({
+                ...config,
                 ...request,
-                method: "OPTIONS",
             }),
         patch: async <A>(request: RequestConfig<A>) =>
-            axiosRequest({
+            httpPatch({
+                ...config,
                 ...request,
-                method: "PATCH",
             }),
         post: async <A>(request: RequestConfig<A>) =>
-            axiosRequest({
+            httpPost({
+                ...config,
                 ...request,
-                method: "POST",
             }),
         put: async <A>(request: RequestConfig<A>) =>
-            axiosRequest({
+            httpPut({
+                ...config,
                 ...request,
-                method: "PUT",
             }),
     }
 }
