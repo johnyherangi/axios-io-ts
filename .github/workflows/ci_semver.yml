@@ -1,4 +1,4 @@
-name: check_version
+name: ci_semver
 
 on:
     pull_request:
