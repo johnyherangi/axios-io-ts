@@ -26,13 +26,12 @@ describe("request.ts", () => {
                 data: undefined,
             })
 
-            expect(
-                async () =>
-                    await httpRequest({
-                        url: "/test",
-                        decoder: t.type({ a: t.string }),
-                    }),
-            ).rejects.toThrow()
+            const error = await httpRequest({
+                url: "/test",
+                decoder: t.type({ a: t.string }),
+            }).catch((error) => error)
+
+            expect(error).toMatchSnapshot()
             expect(axiosSpy).toBeCalled()
         })
     })
