@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios"
 import * as t from "io-ts"
-import { RequestConfig } from "src"
 import { decode } from "./decode"
+import { RequestConfig } from "./types"
 
 export const httpRequest = async <T extends t.Mixed, D = unknown>(
     config: RequestConfig<T, D>,
