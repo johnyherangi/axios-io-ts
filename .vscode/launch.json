@@ -5,15 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-node",
+            "name": "Unit tests",
+            "type": "node",
             "request": "launch",
-            "name": "src/main.ts",
-            "skipFiles": ["<node_internals>/**", "node_modules/**"],
-            "runtimeArgs": ["--nolazy", "-r", "ts-node/register/transpile-only"],
-            "args": ["src/main.ts"],
-            "env": {
-                "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json"
-            }
+            "program": "${workspaceFolder}/node_modules/.bin/jest",
+            "args": ["--runInBand"],
+            "skipFiles": ["${workspaceFolder}/node_modules/**/*.js", "<node_internals>/**/*.js"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Unit tests (current file)",
+            "program": "${workspaceFolder}/node_modules/.bin/jest",
+            "args": ["${fileBasename}", "--runInBand"],
+            "skipFiles": ["${workspaceFolder}/node_modules/**/*.js", "<node_internals>/**/*.js"]
         }
     ]
 }

@@ -2,47 +2,61 @@ import axios, { AxiosResponse } from "axios"
 import { RequestConfig } from "src"
 import { decode } from "./decode"
 
-export const httpRequest = async <A>(config: RequestConfig<A>): Promise<AxiosResponse<A>> => {
+export const httpRequest = async <T, D>(
+    config: RequestConfig<T, D>,
+): Promise<AxiosResponse<T, D>> => {
     return await axios.request(config).then((response) => {
         if (config.decoder) {
             decode(response.data, config.url, config.decoder)
         }
-        return response as AxiosResponse<A>
+        return response as AxiosResponse<T, D>
     })
 }
 
-export const httpDelete = async <A>(request: RequestConfig<A>) =>
+export const httpDelete = async <T = unknown, D = unknown>(
+    config: RequestConfig<T, D>,
+): Promise<AxiosResponse<T, D>> =>
     httpRequest({
-        ...request,
+        ...config,
         method: "DELETE",
     })
 
-export const httpGet = async <A>(request: RequestConfig<A>) =>
+export const httpGet = async <T = unknown, D = unknown>(
+    config: RequestConfig<T, D>,
+): Promise<AxiosResponse<T, D>> =>
     httpRequest({
-        ...request,
+        ...config,
         method: "GET",
     })
 
-export const httpOptions = async <A>(request: RequestConfig<A>) =>
+export const httpOptions = async <T, D>(
+    config: RequestConfig<T, D>,
+): Promise<AxiosResponse<T, D>> =>
     httpRequest({
-        ...request,
+        ...config,
         method: "OPTIONS",
     })
 
-export const httpPatch = async <A>(request: RequestConfig<A>) =>
+export const httpPatch = async <T = unknown, D = unknown>(
+    config: RequestConfig<T, D>,
+): Promise<AxiosResponse<T, D>> =>
     httpRequest({
-        ...request,
+        ...config,
         method: "PATCH",
     })
 
-export const httpPost = async <A>(request: RequestConfig<A>) =>
+export const httpPost = async <T = unknown, D = unknown>(
+    config: RequestConfig<T, D>,
+): Promise<AxiosResponse<T, D>> =>
     httpRequest({
-        ...request,
+        ...config,
         method: "POST",
     })
 
-export const httpPut = async <A>(request: RequestConfig<A>) =>
+export const httpPut = async <T = unknown, D = unknown>(
+    config: RequestConfig<T, D>,
+): Promise<AxiosResponse<T, D>> =>
     httpRequest({
-        ...request,
+        ...config,
         method: "PUT",
     })

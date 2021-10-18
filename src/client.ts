@@ -4,32 +4,32 @@ import { Client, RequestConfig } from "./types"
 
 export const createClient = (config: AxiosRequestConfig): Client => {
     return {
-        delete: async <A>(request: RequestConfig<A>) =>
+        delete: async <T = unknown, D = unknown>(request: RequestConfig<T, D>) =>
             httpDelete({
                 ...config,
                 ...request,
             }),
-        get: async <A>(request: RequestConfig<A>) =>
+        get: async <T = unknown, D = unknown>(request: RequestConfig<T, D>) =>
             httpGet({
                 ...config,
                 ...request,
             }),
-        options: async <A>(request: RequestConfig<A>) =>
+        options: async <T = unknown, D = unknown>(request: RequestConfig<T, D>) =>
             httpOptions({
                 ...config,
                 ...request,
             }),
-        patch: async <A>(request: RequestConfig<A>) =>
+        patch: async <T = unknown, D = unknown>(request: RequestConfig<T, D>) =>
             httpPatch({
                 ...config,
                 ...request,
             }),
-        post: async <A>(request: RequestConfig<A>) =>
+        post: async <T = unknown, D = unknown>(request: RequestConfig<T, D>) =>
             httpPost({
                 ...config,
                 ...request,
             }),
-        put: async <A>(request: RequestConfig<A>) =>
+        put: async <T = unknown, D = unknown>(request: RequestConfig<T, D>) =>
             httpPut({
                 ...config,
                 ...request,
