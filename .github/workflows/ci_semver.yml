@@ -1,4 +1,4 @@
-name: ci
+name: package_version
 
 on:
     pull_request:
