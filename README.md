@@ -1,7 +1,3 @@
-# node-cli-template
+# axios-io-ts
 
-## Actions
-
-### RELEASE_TOKEN
-
-Add a personal access token with `repo` and `webhook` permissions to your repository secrets with the name `RELEASE_TOKEN`. This allows the `release` workflow to fire the required `webhook` event that the `publish` workflow runs on.
+A simple wrapper for [axios](https://github.com/axios/axios) that validates response data using [io-ts](https://github.com/gcanti/io-ts).

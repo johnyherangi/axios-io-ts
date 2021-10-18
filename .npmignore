@@ -1,0 +1,9 @@
+__tests__
+coverage
+src
+.huskyrc.js
+.prettierrc.js
+jest.config.ts
+jestSetup.ts
+tsconfig.json
+tsconfig.paths.json

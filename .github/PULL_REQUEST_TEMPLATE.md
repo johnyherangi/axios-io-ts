@@ -1,6 +1,6 @@
 # Issue
 
-https://github.com/johnyherangi/node-cli-template/issues/
+https://github.com/johnyherangi/axios-io-ts/issues/
 
 # Changes
 
