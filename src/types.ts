@@ -6,16 +6,28 @@ export interface DecodeError {
     errors: string[]
 }
 
-export interface RequestConfig<T, D> extends AxiosRequestConfig<D> {
-    decoder?: t.Decoder<unknown, T>
+export interface RequestConfig<T extends t.Mixed, D> extends AxiosRequestConfig<D> {
+    decoder?: T
     url: string
 }
 
 export interface Client {
-    delete: <T = unknown, D = unknown>(config: RequestConfig<T, D>) => Promise<AxiosResponse<T, D>>
-    get: <T = unknown, D = unknown>(config: RequestConfig<T, D>) => Promise<AxiosResponse<T, D>>
-    options: <T = unknown, D = unknown>(config: RequestConfig<T, D>) => Promise<AxiosResponse<T, D>>
-    post: <T = unknown, D = unknown>(config: RequestConfig<T, D>) => Promise<AxiosResponse<T, D>>
-    patch: <T = unknown, D = unknown>(config: RequestConfig<T, D>) => Promise<AxiosResponse<T, D>>
-    put: <T = unknown, D = unknown>(config: RequestConfig<T, D>) => Promise<AxiosResponse<T, D>>
+    delete: <T extends t.Mixed, D = unknown>(
+        config: RequestConfig<T, D>,
+    ) => Promise<AxiosResponse<t.TypeOf<T>, D>>
+    get: <T extends t.Mixed, D = unknown>(
+        config: RequestConfig<T, D>,
+    ) => Promise<AxiosResponse<t.TypeOf<T>, D>>
+    options: <T extends t.Mixed, D = unknown>(
+        config: RequestConfig<T, D>,
+    ) => Promise<AxiosResponse<t.TypeOf<T>, D>>
+    post: <T extends t.Mixed, D = unknown>(
+        config: RequestConfig<T, D>,
+    ) => Promise<AxiosResponse<t.TypeOf<T>, D>>
+    patch: <T extends t.Mixed, D = unknown>(
+        config: RequestConfig<T, D>,
+    ) => Promise<AxiosResponse<t.TypeOf<T>, D>>
+    put: <T extends t.Mixed, D = unknown>(
+        config: RequestConfig<T, D>,
+    ) => Promise<AxiosResponse<t.TypeOf<T>, D>>
 }
