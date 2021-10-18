@@ -12,7 +12,8 @@
         "baseUrl": ".",
         "resolveJsonModule": true,
         "sourceMap": true,
-        "outDir": "./lib"
+        "outDir": "./lib",
+        "declaration": true
     },
     "ts-node": {
         "require": ["tsconfig-paths/register"]
