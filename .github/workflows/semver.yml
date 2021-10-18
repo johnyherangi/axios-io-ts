@@ -21,15 +21,12 @@ jobs:
             - name: Find tag for package version
               id: tag_exists
               run: |
-                  if [ $(git tag -l "${{ steps.package_version.outputs.value }}") = "" ]
+                  if [ $(git tag -l "${{ steps.package_version.outputs.value }}") -z ]
                   then
                     echo "::set-output name=value::false"
                   else
                     echo "::set-output name=value::true"
                   fi
-            - name: temp
-              id: temp
-              run: echo "${{ steps.tag_exists.outputs.value }}"
             - name: Fail if tag already exists
               if: ${{ steps.tag_exists.outputs.value }}
               run: |
