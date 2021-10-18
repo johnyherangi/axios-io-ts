@@ -1,6 +1,6 @@
 {
     "extends": "./tsconfig.paths.json",
-    "include": ["src", "__tests__", "jest.config.ts"],
+    "include": ["src"],
     "compilerOptions": {
         "target": "esnext",
         "module": "commonjs",
@@ -11,7 +11,8 @@
         "forceConsistentCasingInFileNames": true,
         "baseUrl": ".",
         "resolveJsonModule": true,
-        "noEmit": true
+        "sourceMap": true,
+        "outDir": "./lib"
     },
     "ts-node": {
         "require": ["tsconfig-paths/register"]
