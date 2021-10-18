@@ -21,6 +21,7 @@ jobs:
             - name: Find tag for package version
               id: tag_exists
               run: |
+                  git tag -l "${{ steps.package_version.outputs.value }}"
                   if [[ $(git tag -l "${{ steps.package_version.outputs.value }}") -z ]]
                   then
                     echo "::set-output name=value::false"
