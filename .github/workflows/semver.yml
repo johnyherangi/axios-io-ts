@@ -29,7 +29,7 @@ jobs:
                     echo "::set-output name=value::true"
                   fi
             - name: Fail if tag already exists
-              if: ${{ steps.tag_exists.outputs.value }}
+              if: ${{ steps.tag_exists.outputs.value }} == true
               run: |
                   echo "A tag for package version ${{ steps.package_version.outputs.value }} already exists."
                   exit 1
