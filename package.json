@@ -2,15 +2,15 @@
     "name": "axios-io-ts",
     "version": "0.1.0",
     "description": "",
-    "main": "./bin/index.js",
+    "main": "./lib/index.js",
     "files": [
-        "bin"
+        "lib"
     ],
     "scripts": {
         "build": "tsc",
         "lint": "eslint .",
         "lint-fix": "eslint . --ext .{js,ts} --fix",
-        "package": "ncc build src/index.ts -s -o bin",
+        "package": "ncc build src/index.ts -s -o lib",
         "prettier": "prettier --config .prettierrc.js --write ./**/*.{css,js,json,md,ts,yml}",
         "start": "nodemon --watch src/**/*.ts --exec ts-node src/index.ts",
         "test": "NODE_ENV=test jest --runInBand --coverage"
