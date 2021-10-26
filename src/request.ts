@@ -22,8 +22,6 @@ export const httpDelete = async <T extends t.Mixed, D = unknown>(
         method: "DELETE",
     })
 
-httpDelete({ url: "test" }).then()
-
 export const httpGet = async <T extends t.Mixed, D = unknown>(
     config: RequestConfig<T, D>,
 ): Promise<AxiosResponse<t.TypeOf<T>, D>> =>
