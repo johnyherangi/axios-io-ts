@@ -2,10 +2,6 @@
 
 https://github.com/johnyherangi/axios-io-ts/issues/
 
-# Changes
+# What
 
-> Describe changes here
-
-# Test
-
-> Add test steps here
+_Describe changes here_
