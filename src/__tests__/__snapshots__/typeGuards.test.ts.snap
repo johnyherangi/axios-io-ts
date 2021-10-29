@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`typeGuards.ts onDecodeError captures a DecodeError 1`] = `"decode error"`;
+
+exports[`typeGuards.ts onDecodeError rethrows an unknown error 1`] = `"unknown error"`;
