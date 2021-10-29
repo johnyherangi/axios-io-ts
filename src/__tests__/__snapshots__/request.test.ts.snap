@@ -3,7 +3,7 @@
 exports[`request.ts httpRequest() throws if response data cannot be decoded 1`] = `
 Object {
   "errors": Array [
-    "Expecting { a: string } but instead got: undefined",
+    "Expecting number at a but instead got: \\"test\\"",
   ],
   "url": "/test",
 }

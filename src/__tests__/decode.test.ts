@@ -7,7 +7,7 @@ describe("decode.ts", () => {
             decode({ a: "test" }, "test", t.type({ a: t.string }))
         })
         it("throws if decode fails", () => {
-            expect(() => decode({ a: "test" }, "test", t.type({ a: t.number }))).toThrow()
+            expect(() => decode({ a: "test" }, "test", t.type({ a: t.number }))).toThrowError()
         })
     })
 })

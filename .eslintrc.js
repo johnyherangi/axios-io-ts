@@ -7,7 +7,7 @@ module.exports = {
     overrides: [
         {
             files: ["*.ts"],
-            plugins: ["@typescript-eslint", "fp-ts"],
+            plugins: ["@typescript-eslint"],
             extends: [
                 "plugin:@typescript-eslint/eslint-recommended",
                 "plugin:@typescript-eslint/recommended",
