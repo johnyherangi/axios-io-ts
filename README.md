@@ -11,7 +11,7 @@
   <a href="https://codecov.io/gh/johnyherangi/axios-io-ts">
   <img src="https://codecov.io/gh/johnyherangi/axios-io-ts/branch/master/graph/badge.svg" alt="codecov status">
   </a>
-  <a href="https://img.shields.io/npm/v/axios-io-ts">
+  <a href="https://www.npmjs.com/johnyherangi/axios-io-ts">
   <img src="https://img.shields.io/npm/v/axios-io-ts" alt="npm version">
   </a>
 </p>
