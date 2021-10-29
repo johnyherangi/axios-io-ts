@@ -1,8 +1,28 @@
-# axios-io-ts
+<p align="center">
+	<h1 align="center">axios-io-ts</h1>
+	<p align="center">
+        <a href="https://github.com/axios/axios">axios</a> with <a href="https://github.com/gcanti/io-ts">io-ts</a> validation.
+  </p>
+</p>
+<p align="center">
+  <a href="https://github.com/johnyherangi/axios-io-ts/actions/workflows/ci.yml">
+  <img src="https://github.com/johnyherangi/axios-io-ts/actions/workflows/ci.yml/badge.svg" alt="npm version">
+  </a>
+  <a href="https://codecov.io/gh/johnyherangi/axios-io-ts">
+  <img src="https://codecov.io/gh/johnyherangi/axios-io-ts/branch/master/graph/badge.svg" alt="License">
+  </a>
+</p>
 
-[![ci](https://github.com/johnyherangi/axios-io-ts/actions/workflows/ci.yml/badge.svg)](https://github.com/johnyherangi/axios-io-ts/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/johnyherangi/axios-io-ts/branch/master/graph/badge.svg)](https://codecov.io/gh/johnyherangi/axios-io-ts)
+<!-- Used for the "back to top" links within the document -->
+<div id="contents"></div>
 
-A simple wrapper for [axios](https://github.com/axios/axios) with [io-ts](https://github.com/gcanti/io-ts) validation.
+## Table of Contents
+
+-   [Getting started](#getting-started)
+-   [Features](#features)
+    -   [Requests](#requests)
+    -   [Data validation](#data-validation)
+    -   [Error handling](#error-handling)
 
 ## Getting started
 
@@ -43,6 +63,8 @@ const promise = client.post({
 })
 ```
 
+<sub>[⇧ back to top](#contents)</sub>
+
 ### Data validation
 
 Provide an [io-ts](https://github.com/gcanti/io-ts) decoder to to your request to validate response data e.g.
@@ -59,7 +81,9 @@ const promise = httpGet({
 }).then((response) => response.data.foo)
 ```
 
-## Error handling
+<sub>[⇧ back to top](#contents)</sub>
+
+### Error handling
 
 If response data validation fails, a `DecodeError` is thrown. You can catch this with `onDecodeError()` e.g.
 
@@ -77,3 +101,5 @@ const promise = httpGet({
     .catch(onDecodeError((err) => handle(err)))
     .catch((other) => null)
 ```
+
+<sub>[⇧ back to top](#contents)</sub>
