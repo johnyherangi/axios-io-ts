@@ -38,7 +38,7 @@ npm install axios-io-ts
 
 ### Requests
 
-HTTP request functions can be imported individually
+HTTP request functions can be imported individually e.g.
 
 ```ts
 import { httpPost } from "axios-io-ts"
@@ -51,12 +51,25 @@ const promise = httpPost({
 })
 ```
 
-or by using the client factory
+as part of the default export e.g.
+
+```ts
+import axios from "axios-io-ts"
+
+const promise = axios.get({
+    url: "/test",
+    data: {
+        foo: "bar",
+    },
+})
+```
+
+or, with the client factory e.g.
 
 ```ts
 import { httpClient } from "axios-io-ts"
 
-const client = httpClient({ baseURL: "baseURL" })
+const client = httpClient({ baseURL: "baseURL" }) // OR axios.create({ baseURL: "baseURL" })
 const promise = client.post({
     url: "/test",
     data: {
