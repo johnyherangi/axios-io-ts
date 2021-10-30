@@ -18,6 +18,9 @@ export interface HTTPClient {
     get: <T extends t.Mixed, D = unknown>(
         config: HTTPRequestConfig<T, D>,
     ) => Promise<AxiosResponse<t.TypeOf<T>, D>>
+    head: <T extends t.Mixed, D = unknown>(
+        config: HTTPRequestConfig<T, D>,
+    ) => Promise<AxiosResponse<t.TypeOf<T>, D>>
     options: <T extends t.Mixed, D = unknown>(
         config: HTTPRequestConfig<T, D>,
     ) => Promise<AxiosResponse<t.TypeOf<T>, D>>
