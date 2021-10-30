@@ -19,8 +19,6 @@
   </a>
 </p>
 
-https://img.shields.io/github/package-json/v/johnyherangi/axios-io-ts
-
 <!-- Used for the "back to top" links within the document -->
 <div id="contents"></div>
 
