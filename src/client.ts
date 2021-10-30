@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from "axios"
 import * as t from "io-ts"
+import { httpHead } from "."
 import { httpDelete, httpGet, httpOptions, httpPatch, httpPost, httpPut } from "./request"
 import { HTTPClient, HTTPRequestConfig } from "./types"
 
@@ -12,6 +13,11 @@ export const httpClient = (config: AxiosRequestConfig): HTTPClient => {
             }),
         get: async <T extends t.Mixed, D = unknown>(request: HTTPRequestConfig<T, D>) =>
             httpGet({
+                ...config,
+                ...request,
+            }),
+        head: async <T extends t.Mixed, D = unknown>(request: HTTPRequestConfig<T, D>) =>
+            httpHead({
                 ...config,
                 ...request,
             }),

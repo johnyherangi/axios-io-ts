@@ -6,15 +6,19 @@
 </p>
 <p align="center">
   <a href="https://github.com/johnyherangi/axios-io-ts/actions/workflows/ci.yml">
-  <img src="https://github.com/johnyherangi/axios-io-ts/actions/workflows/ci.yml/badge.svg" alt="ci status">
+    <img src="https://github.com/johnyherangi/axios-io-ts/actions/workflows/ci.yml/badge.svg" alt="ci status">
   </a>
   <a href="https://codecov.io/gh/johnyherangi/axios-io-ts">
-  <img src="https://codecov.io/gh/johnyherangi/axios-io-ts/branch/master/graph/badge.svg" alt="codecov status">
+    <img src="https://codecov.io/gh/johnyherangi/axios-io-ts/branch/master/graph/badge.svg" alt="codecov status">
   </a>
-  <a href="https://www.npmjs.com/axios-io-ts">
+    <a href="https://www.npmjs.com/axios-io-ts">
   <img src="https://img.shields.io/npm/v/axios-io-ts" alt="npm version">
+    </a>
+  <a href="https://github.com/johnyherangi?tab=packages&repo_name=axios-io-ts">
+    <img src="https://img.shields.io/github/package-json/v/johnyherangi/axios-io-ts" alt="npm version">
   </a>
 </p>
+
 <!-- Used for the "back to top" links within the document -->
 <div id="contents"></div>
 
@@ -38,7 +42,7 @@ npm install axios-io-ts
 
 ### Requests
 
-HTTP request functions can be imported individually
+HTTP request functions can be imported individually e.g.
 
 ```ts
 import { httpPost } from "axios-io-ts"
@@ -51,12 +55,25 @@ const promise = httpPost({
 })
 ```
 
-or by using the client factory
+as part of the default export e.g.
+
+```ts
+import axios from "axios-io-ts"
+
+const promise = axios.get({
+    url: "/test",
+    data: {
+        foo: "bar",
+    },
+})
+```
+
+or, with the client factory e.g.
 
 ```ts
 import { httpClient } from "axios-io-ts"
 
-const client = httpClient({ baseURL: "baseURL" })
+const client = httpClient({ baseURL: "baseURL" }) // OR axios.create({ baseURL: "baseURL" })
 const promise = client.post({
     url: "/test",
     data: {
@@ -69,7 +86,7 @@ const promise = client.post({
 
 ### Data validation
 
-Axios response data can be validated by providing an [io-ts](https://github.com/gcanti/io-ts) decoder to to your request
+Axios response data can be validated by providing an [io-ts](https://github.com/gcanti/io-ts) decoder to your request
 
 ```ts
 import { httpGet } from "axios-io-ts"
