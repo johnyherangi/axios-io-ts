@@ -1,6 +1,7 @@
 import {
     httpDelete,
     httpGet,
+    httpHead,
     httpOptions,
     httpPatch,
     httpPost,
@@ -64,6 +65,22 @@ describe("request.ts", () => {
             expect(axiosSpy).toBeCalledWith(
                 expect.objectContaining({
                     method: "GET",
+                }),
+            )
+        })
+    })
+    describe("httpHead()", () => {
+        it("sends correct HTTP method", async () => {
+            const axiosSpy = jest.spyOn(axios, "request").mockResolvedValue(axiosResponse)
+
+            const result = await httpHead({
+                url: "/test",
+                decoder: t.type({ a: t.string }),
+            })
+            expect(result.data.a).toEqual("test")
+            expect(axiosSpy).toBeCalledWith(
+                expect.objectContaining({
+                    method: "HEAD",
                 }),
             )
         })

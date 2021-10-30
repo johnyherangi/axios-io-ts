@@ -30,6 +30,14 @@ export const httpGet = async <T extends t.Mixed, D = unknown>(
         method: "GET",
     })
 
+export const httpHead = async <T extends t.Mixed, D = unknown>(
+    config: HTTPRequestConfig<T, D>,
+): Promise<AxiosResponse<t.TypeOf<T>, D>> =>
+    httpRequest({
+        ...config,
+        method: "HEAD",
+    })
+
 export const httpOptions = async <T extends t.Mixed, D>(
     config: HTTPRequestConfig<T, D>,
 ): Promise<AxiosResponse<t.TypeOf<T>, D>> =>
