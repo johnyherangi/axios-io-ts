@@ -88,7 +88,7 @@ const promise = client.post({
 
 ### Data validation
 
-Axios response data can be validated by providing an [io-ts](https://github.com/gcanti/io-ts) decoder to to your request
+Axios response data can be validated by providing an [io-ts](https://github.com/gcanti/io-ts) decoder to your request
 
 ```ts
 import { httpGet } from "axios-io-ts"
