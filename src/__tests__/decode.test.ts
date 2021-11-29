@@ -1,5 +1,5 @@
+import { decode } from "@src/decode"
 import * as t from "io-ts"
-import { decode } from "src/decode"
 
 describe("decode.ts", () => {
     describe("decode()", () => {
