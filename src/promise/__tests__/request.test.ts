@@ -7,7 +7,7 @@ import {
     httpPost,
     httpPut,
     httpRequest,
-} from "@src/request"
+} from "@src/promise/request"
 import axios from "axios"
 import * as t from "io-ts"
 import { axiosResponse } from "./__fixtures__/axios.fixture"

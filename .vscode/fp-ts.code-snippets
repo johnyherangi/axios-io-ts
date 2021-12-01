@@ -1,0 +1,52 @@
+{
+    "fp-ts-import-all": {
+        "scope": "typescript",
+        "prefix": "fpts",
+        "body": [
+            "import * as E from \"fp-ts/Either\"",
+            "import * as O from \"fp-ts/Option\"",
+            "import * as A from \"fp-ts/Array\"",
+            "import * as AP from \"fp-ts/Apply\"",
+            "import * as TE from \"fp-ts/TaskEither\"",
+            "import * as T from \"fp-ts/Task\"",
+            "$2"
+        ],
+        "description": "Insert all fp-ts import statements"
+    },
+    "fp-ts-either-import": {
+        "scope": "typescript",
+        "prefix": "fpts-either-import",
+        "body": ["import * as E from \"fp-ts/Either\"", "$2"],
+        "description": "Insert fp-ts Either import statement"
+    },
+    "fp-ts-option-import": {
+        "scope": "typescript",
+        "prefix": "fp-ts-option-import",
+        "body": ["import * as O from \"fp-ts/Option\"", "$2"],
+        "description": "Insert fp-ts Option import statement"
+    },
+    "fp-ts-array-import": {
+        "scope": "typescript",
+        "prefix": "fpts-array-import",
+        "body": ["import * as A from \"fp-ts/Array\"", "$2"],
+        "description": "Insert fp-ts Array import statement"
+    },
+    "fp-ts-apply-import": {
+        "scope": "typescript",
+        "prefix": "fpts-apply-import",
+        "body": ["import * as AP from \"fp-ts/Apply\"", "$2"],
+        "description": "Insert fp-ts Apply import statement"
+    },
+    "fp-ts-task-either-import": {
+        "scope": "typescript",
+        "prefix": "fpts-task-either-import",
+        "body": ["import * as TE from \"fp-ts/TaskEither\"", "$2"],
+        "description": "Insert fp-ts TaskEither import statement"
+    },
+    "fp-ts-task-import": {
+        "scope": "typescript",
+        "prefix": "fpts-task-import",
+        "body": ["import * as T from \"fp-ts/Task\"", "$2"],
+        "description": "Insert fp-ts Task import statement"
+    }
+}

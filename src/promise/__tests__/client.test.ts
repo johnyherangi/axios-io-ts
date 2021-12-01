@@ -1,4 +1,4 @@
-import { httpClient } from "@src/client"
+import { httpClient } from "@src/promise/client"
 import axios from "axios"
 import * as t from "io-ts"
 import { axiosResponse } from "./__fixtures__/axios.fixture"

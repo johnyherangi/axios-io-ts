@@ -1,4 +1,4 @@
-import { DecodeError } from "./types"
+import { DecodeError } from "../types"
 
 export const isDecodeError = (error: unknown): error is DecodeError => {
     return (error as DecodeError).url !== undefined && (error as DecodeError).errors !== undefined

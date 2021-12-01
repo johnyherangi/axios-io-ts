@@ -1,4 +1,5 @@
 import { httpClient } from "./client"
+import { isDecodeError, onDecodeError } from "./error"
 import {
     httpDelete,
     httpGet,
@@ -9,12 +10,11 @@ import {
     httpPut,
     httpRequest,
 } from "./request"
-import { isDecodeError, onDecodeError } from "./typeGuards"
 
+export * from "../types"
 export * from "./client"
+export * from "./error"
 export * from "./request"
-export * from "./typeGuards"
-export * from "./types"
 
 const axios = {
     create: httpClient,

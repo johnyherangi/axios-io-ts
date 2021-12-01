@@ -1,10 +1,10 @@
 import axios, { AxiosResponse } from "axios"
 import * as t from "io-ts"
+import { RequestConfig } from "../types"
 import { decode } from "./decode"
-import { HTTPRequestConfig } from "./types"
 
 export const httpRequest = async <T extends t.Mixed, D = unknown>(
-    config: HTTPRequestConfig<T, D>,
+    config: RequestConfig<T, D>,
 ): Promise<AxiosResponse<t.TypeOf<T>, D>> => {
     return await axios.request(config).then((response) => {
         if (config.decoder) {
@@ -15,7 +15,7 @@ export const httpRequest = async <T extends t.Mixed, D = unknown>(
 }
 
 export const httpDelete = async <T extends t.Mixed, D = unknown>(
-    config: HTTPRequestConfig<T, D>,
+    config: RequestConfig<T, D>,
 ): Promise<AxiosResponse<t.TypeOf<T>, D>> =>
     httpRequest({
         ...config,
@@ -23,7 +23,7 @@ export const httpDelete = async <T extends t.Mixed, D = unknown>(
     })
 
 export const httpGet = async <T extends t.Mixed, D = unknown>(
-    config: HTTPRequestConfig<T, D>,
+    config: RequestConfig<T, D>,
 ): Promise<AxiosResponse<t.TypeOf<T>, D>> =>
     httpRequest({
         ...config,
@@ -31,7 +31,7 @@ export const httpGet = async <T extends t.Mixed, D = unknown>(
     })
 
 export const httpHead = async <T extends t.Mixed, D = unknown>(
-    config: HTTPRequestConfig<T, D>,
+    config: RequestConfig<T, D>,
 ): Promise<AxiosResponse<t.TypeOf<T>, D>> =>
     httpRequest({
         ...config,
@@ -39,7 +39,7 @@ export const httpHead = async <T extends t.Mixed, D = unknown>(
     })
 
 export const httpOptions = async <T extends t.Mixed, D>(
-    config: HTTPRequestConfig<T, D>,
+    config: RequestConfig<T, D>,
 ): Promise<AxiosResponse<t.TypeOf<T>, D>> =>
     httpRequest({
         ...config,
@@ -47,7 +47,7 @@ export const httpOptions = async <T extends t.Mixed, D>(
     })
 
 export const httpPatch = async <T extends t.Mixed, D = unknown>(
-    config: HTTPRequestConfig<T, D>,
+    config: RequestConfig<T, D>,
 ): Promise<AxiosResponse<t.TypeOf<T>, D>> =>
     httpRequest({
         ...config,
@@ -55,7 +55,7 @@ export const httpPatch = async <T extends t.Mixed, D = unknown>(
     })
 
 export const httpPost = async <T extends t.Mixed, D = unknown>(
-    config: HTTPRequestConfig<T, D>,
+    config: RequestConfig<T, D>,
 ): Promise<AxiosResponse<t.TypeOf<T>, D>> =>
     httpRequest({
         ...config,
@@ -63,7 +63,7 @@ export const httpPost = async <T extends t.Mixed, D = unknown>(
     })
 
 export const httpPut = async <T extends t.Mixed, D = unknown>(
-    config: HTTPRequestConfig<T, D>,
+    config: RequestConfig<T, D>,
 ): Promise<AxiosResponse<t.TypeOf<T>, D>> =>
     httpRequest({
         ...config,

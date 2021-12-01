@@ -1,4 +1,4 @@
-import { onDecodeError } from "@src/typeGuards"
+import { onDecodeError } from "@src/promise/error"
 
 describe("typeGuards.ts", () => {
     describe("onDecodeError", () => {

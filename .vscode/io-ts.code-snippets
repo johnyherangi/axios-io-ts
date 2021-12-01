@@ -1,0 +1,8 @@
+{
+    "io-ts-import": {
+        "scope": "typescript",
+        "prefix": "iots",
+        "body": ["import * as t from \"io-ts\"", "$2"],
+        "description": "Insert default io-ts import statement"
+    }
+}
