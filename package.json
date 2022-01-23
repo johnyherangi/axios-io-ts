@@ -12,7 +12,7 @@
         "build": "tsc",
         "lint": "eslint .",
         "lint-fix": "eslint . --ext .{js,ts} --fix",
-        "prettier": "prettier --config .prettierrc.js --write ./**/*.{css,js,json,md,ts,yml}",
+        "prettier": "prettier --config .prettierrc.js --write ./**/*.{js,json,md,ts,yml}",
         "test": "NODE_ENV=test jest --runInBand --coverage"
     },
     "repository": {
