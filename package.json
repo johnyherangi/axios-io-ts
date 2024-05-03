@@ -45,11 +45,10 @@
         "json-schema-to-ts": "^3.0.1",
         "prettier": "^3.2.5",
         "pretty-quick": "^4.0.0",
-        "ts-auto-mock": "^3.7.3",
         "ts-jest": "^29.1.2",
         "ts-loader": "^9.5.1",
         "ts-node": "^10.9.2",
-        "ts-patch": "3.1.2",
+        "ts-patch": "^3.1.2",
         "tsconfig-paths": "^4.2.0",
         "typescript": "^5.4.5",
         "webpack": "^5.91.0"
