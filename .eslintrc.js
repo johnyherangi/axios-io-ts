@@ -12,7 +12,6 @@ module.exports = {
                 "plugin:@typescript-eslint/eslint-recommended",
                 "plugin:@typescript-eslint/recommended",
                 "plugin:fp-ts/recommended",
-                "prettier/@typescript-eslint",
             ],
             rules: {
                 "@typescript-eslint/no-unused-vars": [
