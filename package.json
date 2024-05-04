@@ -1,9 +1,8 @@
 {
     "name": "axios-io-ts",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "description": "Axios with io-ts validation",
     "main": "./lib/index.js",
-    "type": "module",
     "files": [
         "lib",
         "src",
