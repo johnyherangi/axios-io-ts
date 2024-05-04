@@ -1,4 +1,4 @@
-import { pathsToModuleNameMapper } from "ts-jest/utils"
+import { pathsToModuleNameMapper } from "ts-jest"
 import { compilerOptions } from "./tsconfig.paths.json"
 
 /*
@@ -23,16 +23,6 @@ export default {
     preset: "ts-jest",
     testEnvironment: "node",
     testMatch: ["**/__tests__/**/*.test.ts"],
-    transform: {
-        ".(ts|tsx)": "ts-jest",
-    },
-    globals: {
-        "ts-jest": {
-            compiler: "ttypescript",
-            tsconfig: "tsconfig.test.json",
-        },
-    },
-    setupFiles: ["<rootDir>jestSetup.ts"],
     roots: ["<rootDir>"],
     modulePaths: [compilerOptions.baseUrl],
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
